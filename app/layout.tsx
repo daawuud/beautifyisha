@@ -15,11 +15,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Beautifyisha | Luxury Beauty Salon, Makeup & Skincare",
+  title: "Beautibyisha | Luxury Beauty Salon, Makeup & Skincare",
   description:
-    "Beautifyisha is a luxury beauty salon offering professional makeup, skincare, facials, eyebrows, lashes, bridal beauty, hair styling, nails, and premium beauty packages.",
+    "Beautibyisha is a luxury beauty salon offering professional makeup, skincare, facials, eyebrows, lashes, bridal beauty, hair styling, nails, and premium beauty packages.",
   keywords: [
-    "Beautifyisha",
+    "Beautibyisha",
     "beauty salon",
     "bridal makeup",
     "facials",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "luxury beauty"
   ],
   openGraph: {
-    title: "Beautifyisha | Enhancing Your Natural Beauty",
+    title: "Beautibyisha | Enhancing Your Natural Beauty",
     description: "Luxury beauty, makeup and skincare services for radiant confidence.",
     type: "website"
   }

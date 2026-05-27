@@ -72,10 +72,10 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$p
 ;
 ;
 const metadata = {
-    title: "Beautifyisha | Luxury Beauty Salon, Makeup & Skincare",
-    description: "Beautifyisha is a luxury beauty salon offering professional makeup, skincare, facials, eyebrows, lashes, bridal beauty, hair styling, nails, and premium beauty packages.",
+    title: "Beautibyisha | Luxury Beauty Salon, Makeup & Skincare",
+    description: "Beautibyisha is a luxury beauty salon offering professional makeup, skincare, facials, eyebrows, lashes, bridal beauty, hair styling, nails, and premium beauty packages.",
     keywords: [
-        "Beautifyisha",
+        "Beautibyisha",
         "beauty salon",
         "bridal makeup",
         "facials",
@@ -85,7 +85,7 @@ const metadata = {
         "luxury beauty"
     ],
     openGraph: {
-        title: "Beautifyisha | Enhancing Your Natural Beauty",
+        title: "Beautibyisha | Enhancing Your Natural Beauty",
         description: "Luxury beauty, makeup and skincare services for radiant confidence.",
         type: "website"
     }

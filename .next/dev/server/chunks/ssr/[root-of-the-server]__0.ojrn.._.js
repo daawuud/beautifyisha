@@ -54,7 +54,7 @@ function BrandLogo({ compact = false, light = false }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
         href: "#home",
         className: "group inline-flex items-center gap-3",
-        "aria-label": "Beautifyisha home",
+        "aria-label": "Beautibyisha home",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "relative grid size-12 place-items-center rounded-full bg-gradient-to-br from-blush-100 via-white to-champagne shadow-glow ring-1 ring-white/80",
@@ -85,7 +85,7 @@ function BrandLogo({ compact = false, light = false }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: `block font-display text-2xl font-semibold tracking-normal ${light ? "text-white" : "text-stone-900"}`,
-                        children: "Beautifyisha"
+                        children: "Beautibyisha"
                     }, void 0, false, {
                         fileName: "[project]/components/BrandLogo.tsx",
                         lineNumber: 15,
@@ -445,9 +445,9 @@ function Home() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SectionHeading$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SectionHeading"], {
-                                            eyebrow: "About Beautifyisha",
+                                            eyebrow: "About Beautibyisha",
                                             title: "A refined beauty salon for radiant, confident moments.",
-                                            copy: "Beautifyisha is a professional beauty salon specializing in makeup, skincare, eyebrows, facials, bridal beauty, and luxury beauty care. Every appointment is designed with thoughtful technique, soft glamour, and a calm salon experience that leaves you feeling polished and cared for."
+                                            copy: "Beautibyisha is a professional beauty salon specializing in makeup, skincare, eyebrows, facials, bridal beauty, and luxury beauty care. Every appointment is designed with thoughtful technique, soft glamour, and a calm salon experience that leaves you feeling polished and cared for."
                                         }, void 0, false, {
                                             fileName: "[project]/app/page.tsx",
                                             lineNumber: 113,
@@ -648,7 +648,7 @@ function Home() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SectionHeading$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SectionHeading"], {
                                     eyebrow: "Gallery",
-                                    title: "A glimpse into the Beautifyisha glow.",
+                                    title: "A glimpse into the Beautibyisha glow.",
                                     copy: "Elegant beauty moments, soft textures, polished finishes, and a salon atmosphere made for feeling your best.",
                                     centered: true
                                 }, void 0, false, {
@@ -799,7 +799,7 @@ function Home() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SectionHeading$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SectionHeading"], {
                                                 eyebrow: "Booking",
                                                 title: "Reserve your beauty appointment.",
-                                                copy: "Share the service you need, your ideal time, and any notes about the look or result you want. Beautifyisha will confirm your appointment details."
+                                                copy: "Share the service you need, your ideal time, and any notes about the look or result you want. Beautibyisha will confirm your appointment details."
                                             }, void 0, false, {
                                                 fileName: "[project]/app/page.tsx",
                                                 lineNumber: 220,
@@ -861,7 +861,7 @@ function Home() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SectionHeading$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SectionHeading"], {
                                     eyebrow: "Contact",
-                                    title: "Visit Beautifyisha for your next glow appointment.",
+                                    title: "Visit Beautibyisha for your next glow appointment.",
                                     centered: true
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
@@ -884,7 +884,7 @@ function Home() {
                                                 ],
                                                 [
                                                     "Email",
-                                                    "hello@beautifyisha.com"
+                                                    "hello@beautibyisha.com"
                                                 ],
                                                 [
                                                     "Hours",
@@ -1124,7 +1124,7 @@ function Home() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/50",
-                        children: "© 2026 Beautifyisha. All rights reserved."
+                        children: "© 2026 Beautibyisha. All rights reserved."
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
                         lineNumber: 298,

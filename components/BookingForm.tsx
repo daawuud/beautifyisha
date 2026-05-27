@@ -13,7 +13,7 @@ const services = [
 
 export function BookingForm() {
   const whatsappMessage = encodeURIComponent(
-    "Hello Beautifyisha, I would like to book a beauty appointment."
+    "Hello Beautibyisha, I would like to book a beauty appointment."
   );
 
   return (

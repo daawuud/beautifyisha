@@ -111,9 +111,9 @@ export default function Home() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <SectionHeading
-                eyebrow="About Beautifyisha"
+                eyebrow="About Beautibyisha"
                 title="A refined beauty salon for radiant, confident moments."
-                copy="Beautifyisha is a professional beauty salon specializing in makeup, skincare, eyebrows, facials, bridal beauty, and luxury beauty care. Every appointment is designed with thoughtful technique, soft glamour, and a calm salon experience that leaves you feeling polished and cared for."
+                copy="Beautibyisha is a professional beauty salon specializing in makeup, skincare, eyebrows, facials, bridal beauty, and luxury beauty care. Every appointment is designed with thoughtful technique, soft glamour, and a calm salon experience that leaves you feeling polished and cared for."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 {["Expert artistry", "Premium care", "Elegant results"].map((item) => (
@@ -170,7 +170,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading
               eyebrow="Gallery"
-              title="A glimpse into the Beautifyisha glow."
+              title="A glimpse into the Beautibyisha glow."
               copy="Elegant beauty moments, soft textures, polished finishes, and a salon atmosphere made for feeling your best."
               centered
             />
@@ -220,7 +220,7 @@ export default function Home() {
               <SectionHeading
                 eyebrow="Booking"
                 title="Reserve your beauty appointment."
-                copy="Share the service you need, your ideal time, and any notes about the look or result you want. Beautifyisha will confirm your appointment details."
+                copy="Share the service you need, your ideal time, and any notes about the look or result you want. Beautibyisha will confirm your appointment details."
               />
               <div className="mt-8 rounded-[1.75rem] border border-blush-100 bg-white/80 p-6 shadow-sm">
                 <p className="font-semibold text-stone-950">Prefer a quick message?</p>
@@ -235,7 +235,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading
               eyebrow="Contact"
-              title="Visit Beautifyisha for your next glow appointment."
+              title="Visit Beautibyisha for your next glow appointment."
               centered
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
@@ -243,7 +243,7 @@ export default function Home() {
                 {[
                   ["Address", "123 Rose Avenue, Beauty District"],
                   ["Phone", "+1 (000) 000-0000"],
-                  ["Email", "hello@beautifyisha.com"],
+                  ["Email", "hello@beautibyisha.com"],
                   ["Hours", "Mon-Sat, 10:00 AM - 7:00 PM"],
                   ["Social", "Instagram, TikTok, Facebook"]
                 ].map(([label, value]) => (
@@ -296,7 +296,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-sm text-white/50">
-          © 2026 Beautifyisha. All rights reserved.
+          © 2026 Beautibyisha. All rights reserved.
         </div>
       </footer>
     </>

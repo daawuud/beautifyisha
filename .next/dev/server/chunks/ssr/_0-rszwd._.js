@@ -20,7 +20,7 @@ const services = [
     "Beauty Packages"
 ];
 function BookingForm() {
-    const whatsappMessage = encodeURIComponent("Hello Beautifyisha, I would like to book a beauty appointment.");
+    const whatsappMessage = encodeURIComponent("Hello Beautibyisha, I would like to book a beauty appointment.");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
         className: "grid gap-4 rounded-[2rem] border border-white/80 bg-white/85 p-5 shadow-luxe backdrop-blur sm:p-8",
         children: [
@@ -213,7 +213,7 @@ function BrandLogo({ compact = false, light = false }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
         href: "#home",
         className: "group inline-flex items-center gap-3",
-        "aria-label": "Beautifyisha home",
+        "aria-label": "Beautibyisha home",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "relative grid size-12 place-items-center rounded-full bg-gradient-to-br from-blush-100 via-white to-champagne shadow-glow ring-1 ring-white/80",
@@ -244,7 +244,7 @@ function BrandLogo({ compact = false, light = false }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: `block font-display text-2xl font-semibold tracking-normal ${light ? "text-white" : "text-stone-900"}`,
-                        children: "Beautifyisha"
+                        children: "Beautibyisha"
                     }, void 0, false, {
                         fileName: "[project]/components/BrandLogo.tsx",
                         lineNumber: 15,
