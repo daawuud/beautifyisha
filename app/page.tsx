@@ -3,86 +3,25 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteHeader } from "@/components/SiteHeader";
-
-const services = [
-  {
-    title: "Bridal Makeup",
-    copy: "Camera-ready glam, soft radiance, and bridal skin prep for your ceremony and celebration.",
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Facial Treatment",
-    copy: "Restorative facial rituals customized for glow, hydration, texture, and calm skin.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Eyebrow Shaping",
-    copy: "Precise brow mapping, shaping, and finishing for a lifted, balanced frame.",
-    image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Eyelash Extensions",
-    copy: "Elegant lash sets from natural definition to full luxury volume.",
-    image: "https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Hair Styling",
-    copy: "Polished waves, sleek styling, and event-ready finishes for every occasion.",
-    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Skincare Consultation",
-    copy: "A thoughtful skin analysis with product guidance and a realistic care plan.",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Nail Services",
-    copy: "Refined manicures, soft color palettes, and delicate finishing details.",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Beauty Packages",
-    copy: "Curated service pairings for brides, birthdays, photoshoots, and self-care days.",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80"
-  }
-];
-
-const gallery = [
-  "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80"
-];
-
-const testimonials = [
-  {
-    name: "Amira H.",
-    service: "Bridal Makeup",
-    quote: "My makeup lasted all day and still looked soft, polished, and completely like me."
-  },
-  {
-    name: "Sofia K.",
-    service: "Facial Treatment",
-    quote: "The facial was calming, thoughtful, and my skin had the prettiest glow afterward."
-  },
-  {
-    name: "Layla M.",
-    service: "Brows and Lashes",
-    quote: "Every detail felt intentional. My brows and lashes looked clean, lifted, and elegant."
-  }
-];
+import { getPublicSiteData } from "@/lib/supabase/public-data";
+import { getServiceDetails, hennaGalleryImages } from "@/lib/services/details";
 
 const quickLinks = ["Home", "About", "Services", "Gallery", "Booking", "Contact"];
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const { services, gallery, testimonials, settings } = await getPublicSiteData();
+  const heroImage =
+    settings.hero_image_url ??
+    "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1800&q=85";
+
   return (
     <>
       <SiteHeader />
       <main>
         <section id="home" className="relative isolate overflow-hidden">
-          <div className="absolute inset-0 -z-20 bg-[url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1800&q=85')] bg-cover bg-center" />
+          <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-stone-950/80 via-stone-900/45 to-blush-200/25" />
           <div className="absolute inset-0 -z-10 sparkle-field opacity-25" />
           <div className="mx-auto grid min-h-[calc(100svh-82px)] max-w-7xl items-center px-4 py-20 sm:px-6 lg:px-8">
@@ -94,10 +33,10 @@ export default function Home() {
                 Luxury Beauty Studio
               </p>
               <h1 className="text-balance font-display text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
-                Enhancing Your Natural Beauty
+                {settings.hero_title ?? "Enhancing Your Natural Beauty"}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/86 sm:text-xl">
-                Luxury Beauty, Makeup & Skincare Services
+                {settings.hero_subtitle ?? settings.tagline ?? "Luxury Beauty, Makeup & Skincare Services"}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="#booking" variant="primary">Book Appointment</ButtonLink>
@@ -143,24 +82,79 @@ export default function Home() {
               centered
             />
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {services.map((service) => (
-                <a
-                  href="#booking"
-                  key={service.title}
-                  className="group overflow-hidden rounded-[1.75rem] border border-white bg-pearl shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-luxe"
+              {services.map((service) => {
+                const details = getServiceDetails(service);
+                const imageUrl = details.imageUrl ?? heroImage;
+
+                return (
+                  <article
+                    key={service.title}
+                    className="group overflow-hidden rounded-[1.75rem] border border-white bg-pearl shadow-sm transition duration-300 hover:-translate-y-2 hover:border-roseGold/30 hover:shadow-luxe"
+                  >
+                    <a href={`/services/${service.slug}`} className="block">
+                      <div className="relative h-48 overflow-hidden">
+                        <div
+                          className="h-full bg-cover bg-center transition duration-500 group-hover:scale-105"
+                          style={{ backgroundImage: `url(${imageUrl})` }}
+                        />
+                        <div className="absolute left-4 top-4 grid size-12 place-items-center rounded-full border border-white/70 bg-white/85 text-roseGold shadow-glow backdrop-blur">
+                          <ServiceIcon kind={details.icon} />
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <h3 className="font-display text-2xl font-semibold text-stone-950">{service.title}</h3>
+                        <p className="mt-3 text-sm leading-7 text-stone-600">{details.description}</p>
+                        {service.price && <p className="mt-4 text-sm font-semibold text-stone-900">Starting at {service.price}</p>}
+                      </div>
+                    </a>
+                    <div className="px-5 pb-5">
+                      <a
+                        href="#booking"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-stone-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-stone-800"
+                      >
+                        Book Now
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section id="henna-gallery" className="bg-gradient-to-b from-blush-50 via-pearl to-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading
+                eyebrow="Henna Gallery"
+                title="Intricate designs for bridal, Eid, and celebration moments."
+                copy="Explore placeholder inspiration for classic wedding mehndi, modern floral patterns, hand designs, and detailed foot henna artistry."
+              />
+              <a
+                href="/services/henna-art"
+                className="inline-flex min-h-12 w-fit items-center justify-center rounded-full border border-roseGold/35 bg-white px-6 text-sm font-semibold text-stone-900 shadow-sm transition hover:-translate-y-0.5 hover:border-softGold hover:bg-champagne/70"
+              >
+                View More Henna Designs
+              </a>
+            </div>
+            <div className="mt-12 grid auto-rows-[260px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {hennaGalleryImages.map((image, index) => (
+                <figure
+                  key={image.title}
+                  className={`group relative overflow-hidden rounded-[1.75rem] bg-blush-100 shadow-sm ${
+                    index === 0 || index === 7 ? "lg:col-span-2" : ""
+                  }`}
                 >
-                  <div className="h-48 overflow-hidden">
-                    <div
-                      className="h-full bg-cover bg-center transition duration-500 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${service.image})` }}
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-2xl font-semibold text-stone-950">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-stone-600">{service.copy}</p>
-                    <p className="mt-5 text-sm font-semibold text-roseGold">Book this service</p>
-                  </div>
-                </a>
+                  <img
+                    src={image.imageUrl}
+                    alt={image.alt}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/82 via-stone-950/35 to-transparent p-5 opacity-100 transition duration-300 sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
+                    <p className="font-display text-2xl font-semibold text-white">{image.title}</p>
+                    <p className="mt-1 text-sm font-medium text-champagne">{image.alt}</p>
+                  </figcaption>
+                </figure>
               ))}
             </div>
           </div>
@@ -177,12 +171,12 @@ export default function Home() {
             <div className="mt-12 grid auto-rows-[240px] gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {gallery.map((image, index) => (
                 <div
-                  key={image}
+                  key={image.id}
                   className={`overflow-hidden rounded-[1.75rem] bg-blush-100 shadow-sm ${index === 0 || index === 5 ? "lg:row-span-2" : ""}`}
                 >
                   <div
                     className="h-full bg-cover bg-center transition duration-500 hover:scale-105"
-                    style={{ backgroundImage: `url(${image})` }}
+                    style={{ backgroundImage: `url(${image.image_url})` }}
                   />
                 </div>
               ))}
@@ -200,12 +194,12 @@ export default function Home() {
             />
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {testimonials.map((review) => (
-                <article key={review.name} className="rounded-[1.75rem] border border-white/10 bg-white/[0.07] p-6 shadow-glow backdrop-blur">
+                <article key={review.id} className="rounded-[1.75rem] border border-white/10 bg-white/[0.07] p-6 shadow-glow backdrop-blur">
                   <div className="text-softGold" aria-label="Five star rating">★★★★★</div>
-                  <p className="mt-5 text-lg leading-8 text-white/86">"{review.quote}"</p>
+                  <p className="mt-5 text-lg leading-8 text-white/86">"{review.review}"</p>
                   <div className="mt-6 border-t border-white/10 pt-5">
-                    <p className="font-semibold text-white">{review.name}</p>
-                    <p className="mt-1 text-sm text-champagne">{review.service}</p>
+                    <p className="font-semibold text-white">{review.customer_name}</p>
+                    <p className="mt-1 text-sm text-champagne">{review.rating}/5 rating</p>
                   </div>
                 </article>
               ))}
@@ -227,7 +221,7 @@ export default function Home() {
                 <p className="mt-2 leading-7 text-stone-600">Use the WhatsApp button in the form for faster booking and consultation requests.</p>
               </div>
             </div>
-            <BookingForm />
+            <BookingForm services={services} />
           </div>
         </section>
 
@@ -241,10 +235,10 @@ export default function Home() {
             <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
               <div className="grid gap-4">
                 {[
-                  ["Address", "123 Rose Avenue, Beauty District"],
-                  ["Phone", "+1 (000) 000-0000"],
-                  ["Email", "hello@beautibyisha.com"],
-                  ["Hours", "Mon-Sat, 10:00 AM - 7:00 PM"],
+                  ["Address", settings.address ?? "123 Rose Avenue, Beauty District"],
+                  ["Phone", settings.phone ?? "+1 (000) 000-0000"],
+                  ["Email", settings.email ?? "hello@beautibyisha.com"],
+                  ["Hours", settings.business_hours ?? "Mon-Sat, 10:00 AM - 7:00 PM"],
                   ["Social", "Instagram, TikTok, Facebook"]
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-[1.5rem] border border-white bg-pearl p-6 shadow-sm">
@@ -275,8 +269,12 @@ export default function Home() {
               Premium makeup, skincare, lashes, brows, nails, and bridal beauty care for polished everyday confidence.
             </p>
             <div className="mt-6 flex gap-3">
-              {["IG", "TT", "FB"].map((item) => (
-                <a key={item} href="#contact" className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/10 text-sm font-semibold transition hover:bg-white/20">
+              {[
+                ["IG", settings.instagram_url],
+                ["TT", settings.tiktok_url],
+                ["FB", settings.facebook_url]
+              ].map(([item, href]) => (
+                <a key={item} href={href || "#contact"} className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/10 text-sm font-semibold transition hover:bg-white/20">
                   {item}
                 </a>
               ))}
@@ -300,6 +298,27 @@ export default function Home() {
         </div>
       </footer>
     </>
+  );
+}
+
+function ServiceIcon({ kind }: { kind: string }) {
+  if (kind === "henna") {
+    return (
+      <svg aria-hidden="true" className="size-6" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3.5c1.4 2.2 1.3 4.4 0 6.4-1.3-2-1.4-4.2 0-6.4Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7.2 6.2c2.4.8 3.9 2.4 4.2 4.8-2.2-.6-3.6-2.2-4.2-4.8Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16.8 6.2c-.6 2.6-2 4.2-4.2 4.8.3-2.4 1.8-4 4.2-4.8Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6 14.5c2.8-1.7 5.6-1.7 8.3 0 1.5.9 2.7 2.2 3.7 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M8 18.5c1.1-.9 2.4-.9 3.7 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg aria-hidden="true" className="size-6" viewBox="0 0 24 24" fill="none">
+      <path d="m12 3 1.7 5.2L19 10l-5.3 1.8L12 17l-1.7-5.2L5 10l5.3-1.8L12 3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="m18 15 .8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8L18 15Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
   );
 }
 
